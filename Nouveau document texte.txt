@@ -1,0 +1,16 @@
+crud create read update delete
+
+
+
+Base de données 
+
+
+1) Les relations
+
+table "user" -->> peut au moins choisir un film et plusieurs   
+		<<---"movie" et le film peut étre publier use seul fois 
+
+
+table "movie" -->> un film est censé avoir au moins 1 et pas plus cast_members
+		<<-- cast_members n'est pas cencé  avoir movies et peut avoir plusieurs.
+

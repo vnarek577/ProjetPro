@@ -1,0 +1,163 @@
+.hi {
+    margin: 0 auto;
+    margin-left: 7%;
+    width: 35%;
+}
+
+.box1 {
+    margin-left: 5%;
+}
+
+.ligne {
+    position: absolute;
+    width: 50%;
+    height: 1px;
+    background-color: #C0C0C0;
+}
+
+.comment {
+    background-color: #DCDCDC;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin: 0 auto;
+    width: 40%;
+}
+
+.comment .pseudo {
+    text-align: center;
+}
+
+.box {
+    width: 15%;
+}
+
+.box1 {
+    width: 30%;
+}
+
+.box2 {
+    width: 30%;
+}
+
+.imdb {
+    color: green;
+    font-size: x-large;
+}
+
+.role {
+    width: 35%;
+}
+
+.dropbtn {
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #383838;
+    min-width: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #383838;
+    text-decoration: underline;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #102828;
+}
+
+.validation {
+    display: flex;
+    width: 23%;
+    height: 30px;
+    background-color: green;
+    color: white;
+    align-items: center;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+.decconect {
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    color: white;
+    background-color: transparent;
+}
+
+a:hover button {
+    text-decoration: underline;
+    transition: 0.3s;
+    color: white;
+}
+
+.color a:hover {
+    color: white;
+}
+
+.color a {
+    color: #cccccc;
+}
+
+.color button {
+    color: #cccccc;
+}
+
+li {
+    display: inline-block;
+}
+
+li a {
+    text-decoration: none;
+    color: #f2f2f2;
+    font-family: Source Sans Pro;
+    font-weight: lighter;
+    font-size: 20px;
+    padding: 0 10px;
+    display: inline-block;
+}
+
+.cool-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width .3s;
+    background-color: white;
+}
+
+.cool-link:hover::after {
+    width: 100%;
+    transition: width .3s;
+}
+
+.cool-link:hover {
+    color: white;
+}
