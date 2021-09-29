@@ -1,6 +1,6 @@
 <?php
 
-require './controllers/controller-user.php';
+require 'controllers/controller-index.php';
 
 
 
@@ -15,7 +15,9 @@ require './controllers/controller-user.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="./assets/style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+Tokumin&display=swap" rel="stylesheet">
     <title>MovieCheck</title>
 </head>
 
@@ -26,193 +28,56 @@ require './controllers/controller-user.php';
         padding: 0;
     }
 
-    .box2 {
+    .navbar-brand {
 
-        margin: 0 auto;
-        text-align: center;
-    }
-    .table {
-        border-collapse: collapse;
-        width: 100%;
-        border-top-right-radius: 10px 10px;
-        border-top-left-radius: 10px 10px;
-        background-color: rgb(255, 255, 255, 0.8);
-        border-radius: 5px;
-        width: 50%;
-        margin: 0 auto;
-        margin-top: 8%;
-    }
-
-    .dropbtn {
-        background-color: #6c757d;
-        color: white;
-        padding: 16px;
-        font-size: 16px;
-        border: none;
-        cursor: pointer;
-    }
-
-    .dropdown {
-        position: relative;
-        display: inline-block;
-    }
-
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        right: 0;
-        background-color: #383838;
-        min-width: 10px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-    }
-
-    .dropdown-content a {
-        color: white;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-    }
-
-    .dropdown-content a:hover {
-        background-color: #383838;
-        text-decoration: underline;
-    }
-
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-
-    .dropdown:hover .dropbtn {
-        background-color: #6c757d;
-    }
-
-    .box {
-        display: flex;
-        margin-top: 10%;
+        font-family: 'Kaisei Tokumin', serif;
+        font-size: 2em;
 
     }
 
-    .validation {
+    .banner-image {
 
-        display: flex;
-        width: 23%;
-        height: 30px;
-        background-color: green;
-        color: white;
-        align-items: center;
-        border-top-right-radius: 7px;
-        border-bottom-right-radius: 7px;
-
-
-    }
-
-    .box1 {
-        background-color: green;
-        height: 30px;
-        width: 40px;
-        text-align: center;
-        border-top-left-radius: 7px;
-        border-bottom-left-radius: 7px;
-    }
-
-    .hd {
-
-        border: none;
-        padding: 0;
-        margin: 0;
-        font-size: 15px;
-        color: white;
-        background-color: transparent;
-    }
-
-    a:hover button {
-        text-decoration: underline;
-    }
-
-
-    body,
-    html {
-        height: 100%;
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .hero-image {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("hero.jpg");
-        height: 40%;
-        background-position: center;
-        background-repeat: no-repeat;
+        background-image: url("assets/img/new.jpg");
         background-size: cover;
-        position: relative;
-        width: 80%;
-        text-align: center;
-        margin: auto;
-        display: flex;
+        width: 100vh;
     }
 
+    .welcome {
 
+        font-size: 6rem;
+        font-weight: bold;
+        color: white;
+    }
 
-    .hero-text {
-        text-align: center;
+    .ligne {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: white;
+        width: 100%;
+        height: 7px;
+        background-color: #505050;
     }
 
-    .hero-text button {
-        border: none;
-        outline: 0;
-        display: inline-block;
-        padding: 10px 25px;
-        color: black;
-        background-color: #ddd;
-        text-align: center;
-        cursor: pointer;
-        border-radius: 20px;
-        transform: translateY(-100%);
-        margin-left: 285px;
-        height: 40px;
+    .responsive {
+
+        height: 400px;
 
     }
 
-    .hero-text input {
-        border-radius: 20px;
-        height: 40px;
-        opacity: 0.7;
+    .image {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40vh;
     }
 
-    .hero-text input:hover{
+    @media screen and (max-width: 576px) {
+        .image img {
+            width: 100px;
+        }
 
-        background-color: white;
-
-    }
-
-
-
-    .hero-text button:hover {
-        background-color: #555;
-        color: white;
-    }
-
-    .navbar {
-
-        background-color: #052f4c;
-
-    }
-
-    .connexion {
-
-        background-color: #052f4c;
-        text-decoration: none;
-        list-style-type: none;
-        background-color: #052f4c;
-        color: #052f4c;
-       
-
-
+        .net {
+            font-size: 20px !important;
+        }
     }
 </style>
 
@@ -227,8 +92,8 @@ require './controllers/controller-user.php';
                 <div class="dropdown" style="float:right;">
                     <button class="dropbtn"><?= $_SESSION['user_pseudo'] ?> <img width="50px" src=""></button>
                     <div class="dropdown-content">
-                        <a href="user.php">Compte</a>
-                        <a href="#">Link 2</a>
+                        <a href="./views/user.php">Compte</a>
+
                         <form action="" method="POST" novalidate>
                             <a><button name="deconectButton" type="submit" class="hd">Déconnexion</button></a>
                         </form>
@@ -239,52 +104,34 @@ require './controllers/controller-user.php';
 
     <?php  } else { ?>
 
-        <nav class="navbar navbar-expand-lg navbar-light navbar">
-            <div class="container-fluid">
-                <a href="index.php"><img width="100px" src="log.png"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
+            <div class="container">
+                <a href="" class="navbar-brand">Mega Critic</a>
+                <button type="button" class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="mx-auto"></div>
+                    <ul class="navbar-nav">
+
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="allmycritics.php">Liste des films</a>
+                            <a href="views/connect.php" class="nav-link text-white"><button class="btn  btn-secondary">Connexion</button></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">HOME</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">CONTACT</a>
+                            <a href="views/form.php" class="nav-link text-white"><button class="btn  btn-secondary">Rejoignez-Nous</button></a>
                         </li>
                     </ul>
-                    <form class="d-flex me-5">
-                        <div class="collapse navbar-collapse connexion">
-                            <li class="nav-item">
-                                <a class="dropdown-item text-white" href="connect.php">Connexion</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="dropdown-item text-white" href="form.php">Rejoignez-Nous</a>
-                            </li>
-
-                        </div>
-                        <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-secondary" type="submit">Search</button> -->
-                        <!-- <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link btn btn-secondary dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    MON COMPTE
-                                </a>
-                                <ul class="dropdown-menu bg-secondary" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item text-white" href="connect.php">IDENTIFIEZ-VOUS</a></li>
-                                    <li><a class="dropdown-item text-white" href="form.php">CREER VOTRE COMPTE</a></li>
-                                </ul>
-                            </li>
-                        </ul> -->
-                    </form>
                 </div>
             </div>
         </nav>
 
+        <div class="banner-image w-100 vh-100 d-flex justify-content-center align-items-center">
+            <div class="content text-center">
+                <p class="welcome">Mega critic</p>
+                <h1 class="text-white">Un site destiné à partager mes avis sur les films les plus connus</h1>
+            </div>
+        </div>
     <?php  }  ?>
 
 
@@ -293,23 +140,58 @@ require './controllers/controller-user.php';
 
 
 
-    <div class="hero-image">
-        <div class="hero-text">
-            <h2>Bienvenue,</h2>
-            <p>
-                Des millions de films, émissions télévisées et artistes...</p>
-            <p>
-                <input id="movieSearch" class="form-control me-2" type="search" placeholder="Recherche..." aria-label="Search">
-                <button class="searchButtom">Search</button>
-            </p>
+
+
+    <div class="ligne"></div>
+
+
+    <h1>Les dernier film postés </h1>
+
+    <div class="container-fluid">
+        <div class="row">
+            <?php foreach ($posterAllArray as $image) { ?>
+                <div class="col-sm-4 d-flex justify-content-around mt-4">
+                    <div class="card" style="width: 12rem;">
+                        <img height="300px" src="<?= $image['critics_poster'] ?>" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text"><?= $image['critics_film_title'] ?></p>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
         </div>
     </div>
 
 
+    <div class="mt-5 d-flex justify-content-center">
+
+        
+        <button type="button" class="btn  btn-secondary">Voir plus</button>
+
+
+    </div>
 
 
 
-    <footer class="bg-light text-center text-lg-start fixed-bottom">
+    <div class="container-fluid bg-dark mt-5 responsive">
+        <div class="row align-items-center net">
+            <div class="col-lg-6 text-center">
+                <h1 class="text-white">Où que vous soyez.</h1>
+                <h2 class="text-white">Regardez et postez vos commentaire<br /> de vos films préférés sur
+                    smartphone et ordinateur.</h2>
+            </div>
+            <div class="col-md-4 image">
+                <img width="150px" src="./assets/img/phone.png">
+                <img width="350px" src="./assets/img/tele.png">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="ligne"></div>
+
+
+    <footer class="bg-light text-center text-lg-start">
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
             <span>Copyright © 2020-2021 - Tous droits réservés.</span>
             <span><a href="#" class="soulignerText" data-bs-toggle="modal" data-bs-target="#mentionModal">
@@ -611,6 +493,20 @@ require './controllers/controller-user.php';
             </div>
 
 
+            <script src="js/bootstrap.bundle.min.js"></script>
+            <script>
+                var nav = document.querySelector('nav');
+
+                window.addEventListener('scroll', function() {
+
+                    if (window.pageYOffset > 100) {
+                        nav.classList.add('bg-dark', 'shadow');
+                    } else {
+                        nav.classList.remove('bg-dark', 'shadow');
+                    }
+
+                })
+            </script>
 
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>

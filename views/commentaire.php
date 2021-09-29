@@ -38,7 +38,7 @@
     <form action="" method="POST">
         <div class="control">
             <div class="center mt-5">
-                <a href="index.php">
+                <a href="user.php">
                     <p class=""><?= $_SESSION['user_pseudo'] ?></p>
                 </a>
             </div>

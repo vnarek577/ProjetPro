@@ -1,6 +1,6 @@
 <?php
 
-require './controllers/controller-user.php';
+require '../controllers/controller-user.php';
 
 
 if (isset($_SESSION['user_id']) and isset($_SESSION['user_pseudo']) and isset($_SESSION['user_mail'])) {
@@ -14,11 +14,11 @@ if (isset($_POST['deconectButton'])) {
     unset($_SESSION['user_pseudo']);
     session_destroy();
 
-    header("location: index.php");
+    header("location: ../index.php");
 }
 
 if (!isset($_SESSION['user_pseudo'])) {
-    header("location: index.php");
+    header("location: ../index.php");
 }
 
 $userId = $_SESSION['user_id'];
@@ -26,7 +26,6 @@ $userId = $_SESSION['user_id'];
 
 
 $viewArrayUser = $userObj->afficheMilaComment($userId);
-
 
 ?>
 
@@ -110,8 +109,6 @@ $viewArrayUser = $userObj->afficheMilaComment($userId);
 
     .box {
         display: flex;
-        margin-top: 10%;
-
     }
 
     .validation {
@@ -211,13 +208,21 @@ $viewArrayUser = $userObj->afficheMilaComment($userId);
         background-color: #C8C8C8;
     }
 
-    .detail {}
-
     table {
 
         border: 2px solid red;
+        width: 50%;
+        border-radius: 10px;
+        border-collapse: collapse;
 
     }
+
+    .box2{
+
+        width: 80%;
+    }
+  
+    
 </style>
 
 <body>
@@ -228,11 +233,11 @@ $viewArrayUser = $userObj->afficheMilaComment($userId);
 
 
 
-            <a href="index.php" class="navbar-brand"><img width="50px" src="dsq.png"></a>
+            <a href="../index.php" class="navbar-brand"><img width="50px" src="dsq.png"></a>
 
             <div class="container">
-                <li><a href="index.php" class="cool-link">Accueil</a></li>
-                <li><a href="" class="cool-link">À propos</a></li>
+                <li><a href="../index.php" class="cool-link">Accueil</a></li>
+                <li><a href="" class="cool-link"></a></li>
                 <li><a href="allmycritics.php" class="cool-link">List des films</a></li>
             </div>
 
@@ -240,7 +245,6 @@ $viewArrayUser = $userObj->afficheMilaComment($userId);
                 <button class="dropbtn"><?= $_SESSION['user_pseudo'] ?> <img width="50px" src=""></button>
                 <div class="dropdown-content color">
                     <a href="user.php">Compte</a>
-                    <a href="#">Link 2</a>
                     <form action="" method="POST" novalidate>
                         <a><button name="deconectButton" type="submit" class="decconect">Déconnexion</button></a>
                     </form>
@@ -248,6 +252,8 @@ $viewArrayUser = $userObj->afficheMilaComment($userId);
             </div>
         </div>
     </nav>
+
+
 
     <div class="box2">
 
@@ -264,19 +270,19 @@ $viewArrayUser = $userObj->afficheMilaComment($userId);
                 <tr>
 
                     <td>Votre Pseudo: <strong><?php echo $pseudo ?></strong></td>
-                    <td><a href="modifProfile.php">Modifier votre profile</a></td>
+                    <td><a href="modifProfile.php"><img width="23px" src="../assets/img/edit.svg"></a></td>
 
                 </tr>
                 <tr>
 
                     <td><?php echo $mail ?></td>
-                    <td><a href="modifEmail.php">Modifier l'adresse e-mail</a></td>
+                    <td><a href="modifEmail.php"><img width="23px" src="../assets/img/edit.svg"></a></td>
                 </tr>
                 <tr>
 
 
                     <td>Mot de passe : ********</td>
-                    <td><a href="modifPassword.php">Modifier le mot de passe</a></td>
+                    <td><a href="modifPassword.php"><img width="23px" src="../assets/img/edit.svg"></a></td>
                 </tr>
                 <tr>
 
@@ -289,10 +295,29 @@ $viewArrayUser = $userObj->afficheMilaComment($userId);
             </tbody>
         </table>
     </div>
-
     <div class="d-flex align-items-center flex-column detail" style="height: 200px;">
         <button name="deleteButton" type="submit" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#hello"> Supprimer compte</button>
     </div>
+    
+
+    <div class="d-flex justify-content-center box">
+        <?php if (isset($_SESSION['erreur'])) {  ?>
+
+
+            <div id="info" class="box1">
+
+                <img width="22px" src="../assets/img/header.jpg">
+
+            </div>
+
+            <div id="hell" class="validation"><?= $_SESSION['erreur'] ?></div>
+
+            <!-- on detruit la variable de session -->
+            <?php unset($_SESSION['erreur']); ?>
+        <?php } ?>
+    </div>
+
+   
 
     <div class="modal fade" id="change" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -349,28 +374,7 @@ $viewArrayUser = $userObj->afficheMilaComment($userId);
 
 
 
-    <div class="d-flex justify-content-center box">
-        <?php if (isset($_SESSION['erreur'])) {  ?>
-
-
-            <div id="info" class="box1">
-
-                <img width="22px" src="valis.png">
-
-            </div>
-
-            <div id="hell" class="validation"><?= $_SESSION['erreur'] ?></div>
-
-            <!-- on detruit la variable de session -->
-            <?php unset($_SESSION['erreur']); ?>
-
-        <?php } else { ?>
-
-
-            <p></p>
-
-        <?php } ?>
-    </div>
+   
 
 
 

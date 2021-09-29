@@ -1,5 +1,5 @@
 <?php
-require './controllers/controller-user.php';
+require '../controllers/controller-user.php';
 ?>
 
 
@@ -19,7 +19,7 @@ require './controllers/controller-user.php';
 
         margin: 0;
         padding: 0;
-        background-image: url("../assets/img/back.jpg");
+        background-image: url("../assets/img/.jpg");
 
     }
 

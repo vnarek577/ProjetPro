@@ -1,6 +1,6 @@
 <?php
 
-require 'controllers/controller-user.php';
+require '../controllers/controller-user.php';
 
 if (isset($_SESSION['user_id']) and isset($_SESSION['user_pseudo']) and isset($_SESSION['user_mail']) and isset($_SESSION['user_lastname']) and isset($_SESSION['user_firstname'])) {
     $pseudo =  $_SESSION['user_pseudo'];

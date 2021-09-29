@@ -1,5 +1,5 @@
 <?php
-require './controllers/controller-user.php';
+require '../controllers/controller-user.php';
 
 
 if (isset($_SESSION['user_id']) and isset($_SESSION['user_mail'])) {

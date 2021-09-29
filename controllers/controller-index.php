@@ -2,8 +2,8 @@
 
 session_start();
 
-require '../models/database.php';
-require '../models/user.php';
+require './models/database.php';
+require './models/user.php';
 
 
 $errors = [];
@@ -15,6 +15,7 @@ $limit = 0;
 
 $criticsAllArray = $userObj->afficheAllCritics();
 
+$posterAllArray = $userObj->afficheCriticPoster();
 
 
 
@@ -236,7 +237,7 @@ if (isset($_POST['deleteButton'])) {
         unset($_SESSION['user_pseudo']);
         session_destroy();
 
-        header("location: ../index.php");
+        header("location: index.php");
     }
 }
 

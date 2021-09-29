@@ -1,6 +1,6 @@
 <?php
 
-require 'controllers/controller-user.php';
+require '../controllers/controller-user.php';
 
 
 ?>

@@ -1,6 +1,6 @@
 <?php
 
-require './controllers/controller-user.php';
+require '../controllers/controller-user.php';
 
 ?>
 
@@ -24,7 +24,7 @@ require './controllers/controller-user.php';
 
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">logo</a>
+            <a class="navbar-brand" href="../index.php">Accueil</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -34,7 +34,7 @@ require './controllers/controller-user.php';
                         <a class="nav-link" href="allmycritics.php">List de films</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="#"></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="user.php">Mon compte</a>

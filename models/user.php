@@ -400,17 +400,17 @@ class User extends Database
     }
 
 
-    // public function afficheMilaComment()
-    // {
+    public function afficheCriticPoster()
+    {
 
-    //     $database = $this->connectDatabase();
-    //     $myQuery = 'SELECT * FROM mila_comments';
+        $database = $this->connectDatabase();
+        $myQuery = 'SELECT * FROM mila_critics LIMIT 6';
     
-    //     $queryClient = $database->query($myQuery);
+        $queryClient = $database->query($myQuery);
 
-    //     $fetch = $queryClient->fetchAll();
-    //     return $fetch;
-    // }
+        $fetch = $queryClient->fetchAll();
+        return $fetch;
+    }
 
 
 }

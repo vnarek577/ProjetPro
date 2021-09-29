@@ -1,6 +1,6 @@
 <?php
 
-require 'controllers/controller-user.php';
+require '../controllers/controller-user.php';
 
 
 ?>
@@ -65,7 +65,7 @@ require 'controllers/controller-user.php';
 
         <form action="" method="post" novalidate>
             <div class="box2">
-                <a href="index.php"><img width="200px" src="log.png"></a>
+                <a href="../index.php"><img width="200px" src="log.png"></a>
                 <p class="titre">Inscription</p>
                 <hr>
                 <div class="form-group mt-2">

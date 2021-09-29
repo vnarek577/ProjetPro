@@ -1,5 +1,5 @@
 <?php
-require './controllers/controller-user.php';
+require '../controllers/controller-user.php';
 
 
 if (isset($_SESSION['user_pseudo'])) {
@@ -32,7 +32,7 @@ if (isset($_SESSION['user_pseudo'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/individuel.css">
+    <link rel="stylesheet" href="../assets/style/individuel.css">
     <title>Document</title>
 </head>
 
@@ -118,6 +118,71 @@ if (isset($_SESSION['user_pseudo'])) {
     .sino {
         margin-left: 22%;
     }
+
+    body {
+        background-color: #f7f6f6
+    }
+
+    .card {
+        border: none;
+        box-shadow: 5px 6px 6px 2px #e9ecef;
+        border-radius: 4px
+    }
+
+    .dots {
+        height: 4px;
+        width: 4px;
+        margin-bottom: 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block
+    }
+
+    .badge {
+        padding: 7px;
+        padding-right: 9px;
+        padding-left: 16px;
+        box-shadow: 5px 6px 6px 2px #e9ecef
+    }
+
+    .user-img {
+        margin-top: 4px
+    }
+
+    .check-icon {
+        font-size: 17px;
+        color: #c3bfbf;
+        top: 1px;
+        position: relative;
+        margin-left: 3px
+    }
+
+    .form-check-input {
+        margin-top: 6px;
+        margin-left: -24px !important;
+        cursor: pointer
+    }
+
+    .form-check-input:focus {
+        box-shadow: none
+    }
+
+    .icons i {
+        margin-left: 8px
+    }
+
+    .reply {
+        margin-left: 12px
+    }
+
+    .reply small {
+        color: #b7b4b4
+    }
+
+    .reply small:hover {
+        color: green;
+        cursor: pointer
+    }
 </style>
 
 <body>
@@ -127,7 +192,7 @@ if (isset($_SESSION['user_pseudo'])) {
     <?php if (isset($_SESSION['user_pseudo'])) {  ?>
         <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.php">logo</a>
+                <a class="navbar-brand" href="../index.php">logo</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -248,6 +313,55 @@ if (isset($_SESSION['user_pseudo'])) {
                     <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
                 </svg>
             </button>
+
+            <div class="container mt-5">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-8">
+                        <div class="headings d-flex justify-content-between align-items-center mb-3">
+                            <h5>Les commentaires</h5>
+                            <div class="buttons"> <span class="badge bg-white d-flex flex-row align-items-center"> <span class="text-primary">Comments "ON"</span>
+                                    <div class="form-check form-switch"> <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked> </div>
+                                </span> </div>
+                        </div>
+                        <div class="card p-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="user d-flex flex-row align-items-center"><span><small class="font-weight-bold text-primary">james_olesenn</small> <small class="font-weight-bold">Hmm, This poster looks cool</small></span> </div> <small>2 days ago</small>
+                            </div>
+                            <div class="action d-flex justify-content-between mt-2 align-items-center">
+                                <div class="reply px-4"> <small>Delete</small> <span class="dots"></span> <small>Modify</small> <span class="dots"></span></div>
+                                <div class="icons align-items-center"> <i class="fa fa-star text-warning"></i> <i class="fa fa-check-circle-o check-icon"></i> </div>
+                            </div>
+                        </div>
+                        <div class="card p-3 mt-2">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="user d-flex flex-row align-items-center"> <img src="https://i.imgur.com/C4egmYM.jpg" width="30" class="user-img rounded-circle mr-2"> <span><small class="font-weight-bold text-primary">olan_sams</small> <small class="font-weight-bold">Loving your work and profile! </small></span> </div> <small>3 days ago</small>
+                            </div>
+                            <div class="action d-flex justify-content-between mt-2 align-items-center">
+                                <div class="reply px-4"> <small>Remove</small> <span class="dots"></span> <small>Reply</small> <span class="dots"></span> <small>Translate</small> </div>
+                                <div class="icons align-items-center"> <i class="fa fa-check-circle-o check-icon text-primary"></i> </div>
+                            </div>
+                        </div>
+                        <div class="card p-3 mt-2">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="user d-flex flex-row align-items-center"> <img src="https://i.imgur.com/0LKZQYM.jpg" width="30" class="user-img rounded-circle mr-2"> <span><small class="font-weight-bold text-primary">rashida_jones</small> <small class="font-weight-bold">Really cool Which filter are you using? </small></span> </div> <small>3 days ago</small>
+                            </div>
+                            <div class="action d-flex justify-content-between mt-2 align-items-center">
+                                <div class="reply px-4"> <small>Remove</small> <span class="dots"></span> <small>Reply</small> <span class="dots"></span> <small>Translate</small> </div>
+                                <div class="icons align-items-center"> <i class="fa fa-user-plus text-muted"></i> <i class="fa fa-star-o text-muted"></i> <i class="fa fa-check-circle-o check-icon text-primary"></i> </div>
+                            </div>
+                        </div>
+                        <div class="card p-3 mt-2">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="user d-flex flex-row align-items-center"> <img src="https://i.imgur.com/ZSkeqnd.jpg" width="30" class="user-img rounded-circle mr-2"> <span><small class="font-weight-bold text-primary">simona_rnasi</small> <small class="font-weight-bold text-primary">@macky_lones</small> <small class="font-weight-bold text-primary">@rashida_jones</small> <small class="font-weight-bold">Thanks </small></span> </div> <small>3 days ago</small>
+                            </div>
+                            <div class="action d-flex justify-content-between mt-2 align-items-center">
+                                <div class="reply px-4"> <small>Remove</small> <span class="dots"></span> <small>Reply</small> <span class="dots"></span> <small>Translate</small> </div>
+                                <div class="icons align-items-center"> <i class="fa fa-check-circle-o check-icon text-primary"></i> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         <?php } ?>
 
