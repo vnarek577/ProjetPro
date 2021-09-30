@@ -37,6 +37,10 @@ $viewArrayUser = $userObj->afficheMilaComment($userId);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 
@@ -44,7 +48,9 @@ $viewArrayUser = $userObj->afficheMilaComment($userId);
     body {
         margin: 0;
         padding: 0;
+        font-family: "Avenir-Roman", sans-serif;
     }
+
 
     .box2 {
         margin: 0 auto;
@@ -109,6 +115,8 @@ $viewArrayUser = $userObj->afficheMilaComment($userId);
 
     .box {
         display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .validation {
@@ -201,38 +209,172 @@ $viewArrayUser = $userObj->afficheMilaComment($userId);
     }
 
     .compte {
-
-        border: 2px red solid;
-
         width: 30%;
         background-color: #C8C8C8;
     }
 
     table {
 
-        border: 2px solid red;
         width: 50%;
         border-radius: 10px;
         border-collapse: collapse;
 
     }
 
-    .box2{
+    .box2 {
 
         width: 80%;
     }
-  
-    
+
+
+    .content {
+
+        color: white;
+        height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+    }
+
+    .content-top {
+
+        width: 600px;
+
+    }
+
+    .content-top span {
+
+        display: flex;
+        justify-content: space-between;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+
+    .main-content img:hover {
+
+        transform: scale(1.2)
+    }
+
+    .content-top p {
+        border: 2px grey solid;
+        background: grey;
+    }
+
+
+
+    .content-top h2 {
+
+        margin-left: 5%;
+    }
+
+    .text {
+
+        color: white;
+    }
+
+    .main-content {
+        border: 1px solid grey;
+        border-radius: 5px;
+    }
+
+
+    .main-content span button {
+
+        margin-bottom: 3%;
+
+    }
+
+
+    .main-content span svg {
+
+        width: 5%;
+        height: 1%;
+        background: white;
+        border-radius: 100px;
+
+    }
+
+    .navbar-brand{
+
+        font-family: 'Mouse Memoirs', sans-serif;
+        font-size: xx-large;
+    }
+
+    @media screen and (max-width: 576px) {
+
+        body {
+
+            font-size: 14px;
+
+        }
+
+        .content h2 {
+
+            margin-left: 10%;
+
+        }
+
+        .content p {
+
+            width: 100%;
+
+        }
+
+        .main-content {
+            width: 90%;
+            margin-left: 5%;
+        }
+
+        .main-content span button {
+
+            width: 45%;
+            height: 20px;
+            font-size: 14px;
+            justify-content: space-between;
+            padding: 0;
+        }
+
+
+    }
 </style>
 
-<body>
+<body class="bg-dark">
 
 
-    <nav class="navbar navbar-light bg-secondary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid container">
+            <a class="navbar-brand" href="../index.php">MegaCritic</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a href="../index.php" class="nav-link cool-link" aria-current="page">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link cool-link" href="allmycritics.php">List des films</a>
+                    </li>
+                </ul>
+                <div class="dropdown">
+                    <button class="dropbtn bg-dark decconect"><?= $_SESSION['user_pseudo'] ?> <img width="50px" src=""></button>
+                    <div class="dropdown-content color">
+                        <a href="user.php">Compte</a>
+                        <form action="" method="POST" novalidate>
+                            <a><button name="deconectButton" type="submit" class="decconect">Déconnexion</button></a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- <nav class="navbar navbar-light bg-secondary">
         <div class="container-fluid">
-
-
-
             <a href="../index.php" class="navbar-brand"><img width="50px" src="dsq.png"></a>
 
             <div class="container">
@@ -251,11 +393,42 @@ $viewArrayUser = $userObj->afficheMilaComment($userId);
                 </div>
             </div>
         </div>
-    </nav>
+    </nav> -->
 
 
 
-    <div class="box2">
+    <div class="content">
+        <div class="content-top">
+            <h2>Compte</h2>
+            <div class="main-content">
+                <p>Détails de votre compte</p>
+                <span>Pseudo: <?php echo $pseudo ?><a href="modifProfile.php"><img width="23px" src="../assets/img/edit-circle-line.svg"></a></span>
+                <hr>
+                <span><?php echo $mail ?><a href="modifEmail.php"><img width="23px" src="../assets/img/edit-circle-line.svg"></a></span>
+                <hr>
+                <span>Mot de passe : ********<a href="modifPassword.php"><img width="23px" src="../assets/img/edit-circle-line.svg"></a></span>
+                <hr>
+                <span><button type="button" class="btn btn-sm btn-secondary" name="showId" value="<?php echo $userId ?>" data-bs-toggle="modal" data-bs-target="#change">Mes commentaires</button><button name="deleteButton" type="submit" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#hello"> Supprimer compte</button></span>
+            </div>
+        </div>
+    </div>
+    <div class="text">
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div class="box2">
 
         <table class="table">
             <thead class="thead-dark">
@@ -297,8 +470,8 @@ $viewArrayUser = $userObj->afficheMilaComment($userId);
     </div>
     <div class="d-flex align-items-center flex-column detail" style="height: 200px;">
         <button name="deleteButton" type="submit" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#hello"> Supprimer compte</button>
-    </div>
-    
+    </div> -->
+
 
     <div class="d-flex justify-content-center box">
         <?php if (isset($_SESSION['erreur'])) {  ?>
@@ -312,12 +485,12 @@ $viewArrayUser = $userObj->afficheMilaComment($userId);
 
             <div id="hell" class="validation"><?= $_SESSION['erreur'] ?></div>
 
-            <!-- on detruit la variable de session -->
+            on detruit la variable de session
             <?php unset($_SESSION['erreur']); ?>
         <?php } ?>
     </div>
 
-   
+
 
     <div class="modal fade" id="change" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -348,18 +521,6 @@ $viewArrayUser = $userObj->afficheMilaComment($userId);
                                     <td><?= $affiche['critics_film_title']  ?></td>
                                     <td><a href="individuelCritic.php?id=<?= $affiche['critics_id']  ?>"><img width="50px" src="<?= $affiche['critics_poster']  ?>"></a></td>
                                 </tr>
-                                <!-- <tr>
-                                    <th scope="row">2</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr> -->
                             </tbody>
                         <?php } ?>
                     </table>
@@ -374,7 +535,7 @@ $viewArrayUser = $userObj->afficheMilaComment($userId);
 
 
 
-   
+
 
 
 
