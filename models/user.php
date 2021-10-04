@@ -118,17 +118,15 @@ class User extends Database
     }
 
 
-    public function getChangeProfile($lastname, $firstname, $pseudo, $mail, $id)
+    public function getChangeProfile($pseudo, $id)
     {
 
         $database = $this->connectDatabase();
-        $myQuery = ('UPDATE mila_user SET user_lastname = :lastname,  user_firstname = :firstname, user_pseudo= :pseudo, user_mail = :mail WHERE user_id = :id');
+        $myQuery = ('UPDATE mila_user SET user_pseudo = :pseudo WHERE user_id = :id');
         $queryClient = $database->prepare($myQuery);
 
-        $queryClient->bindValue(':lastname', $lastname, PDO::PARAM_STR);
-        $queryClient->bindValue(':firstname', $firstname, PDO::PARAM_STR);
+     
         $queryClient->bindValue(':pseudo', $pseudo, PDO::PARAM_STR);
-        $queryClient->bindValue(':mail', $mail, PDO::PARAM_STR);
         $queryClient->bindValue(':id', $id, PDO::PARAM_STR);
 
         $queryClient->execute();

@@ -109,22 +109,17 @@ if (isset($_POST['connectToUser'])) {
 
         header("Location: adminPage.php");
     }
-
-
-
-    
 }
 
 
 
 
- 
+
 
 
 
 if (isset($_POST['recoverPSW'])) {
 
-    var_dump($_POST);
 
     // creation du Token
     $generer = openssl_random_pseudo_bytes(4);
@@ -136,13 +131,20 @@ if (isset($_POST['recoverPSW'])) {
 
 
     // on compte la longueur du tableau pour verifier que le user existe bien
-    if (count($userInfos) > 1) {
-
-        $TokenArray = $userObj->addTokentoUser($token, $userInfos['user_id']);
-        mail($userInfos['user_mail'], 'Mot', 'Bonjour voici le lien pour restaurer votre mot de pass: http://projetperso/changerMTD.php?token_token=' . $token);
-    } else {
+    if (!$userInfos) {
         $errors['mail'] = 'mail inexistant';
-        var_dump($errors);
+    } 
+
+
+    if(empty($inputMail)){
+        $errors['mail'] = 'Veillez entrez le champ';
+    }
+
+    if (count($errors) == 0) {
+        $TokenArray = $userObj->addTokentoUser($token, $userInfos['user_id']);
+        mail($userInfos['user_mail'], 'Mot', 'Bonjour voici le lien pour restaurer votre mot de pass: http://newprojetpronarek//views/changerMTD.php?token_token=' . $token);
+        $_SESSION['ok'] = "Un message a été envoyer";
+
     }
 }
 
@@ -162,7 +164,8 @@ if (isset($_POST['changePSW'])) {
 
         if (count($errors) == 0) {
             $userObj->addChangePassword($password, $token);
-            echo 'mot de passe modifié';
+            header("Location: ./connect.php");
+            $_SESSION["mot_de_pass"] = 'mot de passe modifié';
         }
     } else {
         // Message si pas de parametre d'url
@@ -172,34 +175,32 @@ if (isset($_POST['changePSW'])) {
 
 
 if (isset($_POST['updateProfileIndividual'])) {
-    $lastname = $_POST['lastname'];
-    $firstname = $_POST['firstname'];
+
     $pseudo = $_POST['pseudo'];
-    $mail = $_POST['mail'];
+
     $id = $_POST['updateProfileIndividual'];
 
 
-    $checkPSW = $userObj->getUserInfosByMail($mail);
-
-    if ($checkPSW['user_mail']) {
-
-        $errors['mail'] = 'E-mail existant';
-    }
 
 
     $UserArray = $userObj->checkPseudo($pseudo);
     if ($UserArray) {
 
-        $errors['mail'] = 'pseudo exist';
+        $errors['mail'] = 'Pseudo exist';
     }
 
+
+    if (empty($pseudo)) {
+
+        $errors['mail'] = 'Veuillez entrez votre nouvel pseudo';
+    }
 
 
     if (count($errors) == 0) {
 
-        $ModifierArray = $userObj->getChangeProfile($lastname, $firstname, $pseudo, $mail, $id);
+        $ModifierArray = $userObj->getChangeProfile($pseudo, $id);
 
-        $_SESSION['erreur'] = "Profile de votre compte a été modifiée.";
+        $_SESSION['erreur'] = "Pseudo de votre compte a été modifiée";
 
         header('Location: user.php');
 
@@ -272,7 +273,7 @@ if (isset($_POST['updateEmailIndividual'])) {
 
         $update = $userObj->ChangeMail($mail, $id);
 
-        $_SESSION['erreur'] = "L'adresse e-mail de votre compte a été modifiée.";
+        $_SESSION['erreur'] = "L'adresse e-mail de votre compte a été modifiée";
 
         header('Location: user.php');
     } elseif (empty($mail)) {
@@ -281,7 +282,7 @@ if (isset($_POST['updateEmailIndividual'])) {
         $errors['mail'] = "Veuillez saissir votre e-mail";
     } else {
 
-        $errors['ok'] = "L'adresse e-mail de votre compte a été modifiée.";
+        $errors['ok'] = "L'adresse e-mail de votre compte a été modifiée";
     }
 
     $allUserArray = $userObj->afficherUserProfile($id);
@@ -329,7 +330,7 @@ if (isset($_POST['updatePasswordIndividual'])) {
     if (count($errors) == 0) {
 
         $update = $userObj->ChangePassword($newPassword, $id);
-        $_SESSION['erreur'] = "Votre mot de passe a été modifié.";
+        $_SESSION['erreur'] = "Votre mot de passe a été modifié";
         header("Location: user.php");
     }
 }
@@ -538,6 +539,3 @@ if (isset($_POST['deleteUserView'])) {
 
 //     $viewArrayUser = $userObj->afficheMilaComment($userId);
 // }
-
-
-

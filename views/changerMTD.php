@@ -13,17 +13,18 @@ require '../controllers/controller-user.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+Tokumin&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <style>
     body {
-
         margin: 0;
         padding: 0;
-        background-image: url("../assets/img/back.jpg");
-
+        background: #1a1d29;
+        font-family: 'Kaisei Tokumin', serif;
     }
-
 
     .titre {
 
@@ -31,18 +32,24 @@ require '../controllers/controller-user.php';
     }
 
     .hello {
-
         text-align: center;
-        border-radius: 2px;
-        position: absolute;
+        border-radius: 50px;
         margin-bottom: 15px;
         background: #f7f7f7;
         box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
         padding: 30px;
         justify-content: center;
-        left: 42%;
-        border-radius: 10px;
-        width: 300px;
+        align-items: center;
+        width: 25%;
+        height: 78%;
+    }
+
+    .main {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        height: 90vh;
+
     }
 
     .connect {
@@ -53,48 +60,43 @@ require '../controllers/controller-user.php';
     @media screen and (max-width: 576px) {
         .hello {
             top: 20%;
-            left: 20%;
+            left: 0;
             transform: unset;
+            width: 80%;
         }
     }
 
-    label button {
-
-        display: flex;
-        align-items: center;
-        position: absolute;
-        top: 50%;
-        right: 40px;
-        transform: translateY(-260%);
-        width: 30px;
-        color: black;
-        transition: all 0.2s;
-        border: none;
-        background-color: white;
-        opacity: 0.5;
-
-    }
-
-    span button {
-
-        display: flex;
-        align-items: center;
-        position: absolute;
-        top: 50%;
-        right: 56px;
-        transform: translateY(-340%);
-        width: 30px;
-        color: black;
-        transition: all 0.2s;
-        border: none;
-        background-color: white;
-        opacity: 0.5;
-    }
-
-    label a {
+    div a {
 
         text-decoration: none;
 
+    }
+
+    .change {
+        display: flex;
+        justify-content: space-between;
+        font-size: 15px;
+        margin: 10px 20px;
+    }
+
+    #pseudo {
+        height: 50px;
+    }
+
+    .nick2 {
+        font-size: 13px;
+    }
+
+    .nick {
+        font-size: 13px;
+    }
+
+    #psw {
+        height: 50px;
+    }
+
+    #password1 {
+        height: 50px;
     }
 </style>
 
@@ -105,49 +107,35 @@ require '../controllers/controller-user.php';
 
 
     <form action="" method="POST" novalidate>
-
-        <div class="hello mt-5">
-            <p class="connect">Modifier le mot de passe</p>
-            <div class="form-group w-100">
-
-                <?php if (isset($errors['erreur'])) {  ?>
-                    <input type="password" name="password" class="form-control w-100 is-invalid" id="password1" placeholder="Password">
-
-                <?php } else { ?>
-
+        <div class="main">
+            <div class="hello mt-5">
+                <img width="130px" src="../assets/img/password.svg">
+                <p>Modifier le mot de passe</p>
+                <div class="form-floating mb-2">
                     <input type="password" name="password" class="form-control w-100" id="password1" placeholder="Password">
+                    <label class="nick2" for="password1">Password</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" name="password2" class="form-control w-100" id="psw" placeholder="Confirm password">
+                    <label class="nick" for="pseudo">Confirm password</label>
+                </div>
+                <p class="text-danger"><?= isset($errors['motDePass']) ? $errors['motDePass'] : '' ?></p>
 
-                <?php } ?>
+                <label>
+                    <a href="mtdOublier.php" style="color: black;">
+                        Mot de pass oublié?
+                    </a>
+                </label>
+                <div class="but">
+                    <button type="submit" name="changePSW" class="btn btn-primary mt-4">Enregistrer</button>
+                </div>
 
+
+                <p class="mt-3">
+                    <a href="index.php">Revenir a l'accueil<a>
+                </p>
             </div>
-            <div class="form-group w-100 mt-3">
-                <?php if (isset($errors['erreur'])) {  ?>
-
-                    <input type="password" name="password2" class="form-control w-100 is-invalid" id="psw" placeholder="Password">
-
-
-                <?php } else { ?>
-                    <input type="password" name="password2" class="form-control w-100" id="psw" placeholder="Password">
-
-
-                <?php } ?>
-            </div>
-            <label for="formGroupExampleInput" class="text-danger mt-2"><?= $errors['erreur'] ?? '' ?></label>
-            <label>
-                <a href="mtdOublier.php" style="color: black;">
-                    Mot de pass oublié?
-                </a>
-            </label>
-            <div class="but">
-                <button type="submit" name="changePSW" class="btn btn-primary mt-4">Enregistrer</button>
-            </div>
-
-
-            <p class="mt-3">
-                <a href="index.php">Revenir a l'accueil<a>
-            </p>
         </div>
-
     </form>
 
 

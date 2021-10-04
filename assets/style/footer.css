@@ -1,0 +1,161 @@
+ .footer {
+     background: black;
+     height: 260px;
+     font-family: 'Kaisei Tokumin', serif;
+ }
+ /* .footer-main-content {
+     display: flex;
+     justify-content: space-evenly;
+ } */
+ 
+ .footer-main-brand {
+     display: flex;
+     justify-content: center;
+     color: white;
+     font-family: 'Mouse Memoirs', sans-serif;
+     font-size: x-large;
+ }
+ 
+ .footer-brand p {
+     margin-top: 10px;
+ }
+ 
+ .footer-me {
+     display: flex;
+     justify-content: center;
+     color: white;
+ }
+ 
+ .footer-text {
+     font-size: large;
+     color: white;
+     display: flex;
+     justify-content: center;
+ }
+ 
+ .footer-icons {
+     margin-right: 2%;
+ }
+ 
+ .footer-icons ul {
+     display: flex;
+     justify-content: center;
+     color: white;
+ }
+ 
+ .footer-icons li {
+     text-decoration: none;
+     list-style: none;
+     padding: 5px 15px;
+ }
+ 
+ .facebook {
+     color: #4267B2;
+ }
+ 
+ .facebook:hover {
+     color: #4267B2;
+     transition: 0.5s;
+ }
+ 
+ .youtube {
+     color: #FF0000;
+ }
+ 
+ .youtube:hover {
+     color: #FF0000;
+     transition: 0.5s;
+ }
+ 
+ .linkedin {
+     color: #0e76a8;
+ }
+ 
+ .linkedin:hover {
+     color: #0e76a8;
+     transition: 0.5s;
+ }
+ 
+ .instagram {
+     color: #1DA1F2;
+ }
+ 
+ .instagram:hover {
+     color: #1DA1F2;
+     transition: 0.5s;
+ }
+ 
+ .contact {
+     display: flex;
+     justify-content: center;
+     color: red;
+ }
+ 
+ .contact .left {
+     background: red;
+     width: 10%;
+     height: 3px;
+     margin: 10px 15px;
+ }
+ 
+ .contact .right {
+     background: red;
+     width: 10%;
+     height: 3px;
+     margin: 10px 15px;
+ }
+ 
+ .footer-menu {
+     display: flex;
+     justify-content: center;
+     color: red;
+ }
+ 
+ .footer-menu ul {
+     display: flex;
+ }
+ 
+ .footer-menu li {
+     padding: 5px 15px;
+     list-style: none;
+ }
+ 
+ .footer-menu li a {
+     text-decoration: none;
+     color: white;
+     font-size: large;
+     font-family: 'Kaisei Tokumin', serif;
+ }
+ 
+ .footer-menu li i {
+     padding: 2px 10px;
+ }
+ 
+ @media screen and (max-width: 576px) {
+     .footer-text {
+         text-align: center;
+     }
+     .footer-icons {
+         display: block;
+     }
+     .footer-icons li {
+         display: flex;
+         justify-content: center;
+         margin-right: 8%;
+     }
+     .footer-icons ul {
+         display: block;
+     }
+     .footer {
+         height: 500px;
+     }
+     .footer-me {
+         display: block;
+         text-align: center;
+     }
+     .footer-menu ul {
+         display: block;
+         text-align: center;
+         margin-right: 10%;
+     }
+ }

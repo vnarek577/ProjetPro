@@ -16,11 +16,26 @@ require '../controllers/controller-user.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+Tokumin&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap" rel="stylesheet">
     <title>Formulaire</title>
 </head>
 
 <body>
     <style>
+
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: #1a1d29;
+            color: white;
+            font-family: 'Kaisei Tokumin', serif;
+
+        }
         .box2 {
 
             text-align: center;
@@ -39,25 +54,50 @@ require '../controllers/controller-user.php';
         }
 
 
-        .titre {
-
-            font-size: larger;
-            font-weight: bold;
-
-        }
+     
 
         .contain {
             display: flex;
             width: 100%;
-            flex-direction: row;
         }
 
         .box1 {
 
-            background-image: url("camera.jpg");
+            background-image: url("../assets/img/col.jpg");
             height: 720px;
             width: 54%;
             background-repeat: no-repeat;
+        }
+
+        .logo{
+
+            font-family: 'Mouse Memoirs', sans-serif;
+            text-decoration: none;
+            color: white;
+            font-size: 2rem;
+
+        }
+
+        .logo:hover{
+
+            color: white;
+
+        }
+
+        @media screen and (max-width: 576px) {
+            .box1 {
+                display: block;
+                width: 100%;
+                margin-top: 120%;
+            }
+
+            .box2 {
+                top: 0;
+                left: 0;
+                width: 100%;
+                margin-bottom: 50%;
+            }
+
         }
     </style>
     <div class="contain">
@@ -65,7 +105,7 @@ require '../controllers/controller-user.php';
 
         <form action="" method="post" novalidate>
             <div class="box2">
-                <a href="../index.php"><img width="200px" src="log.png"></a>
+                <a href="../index.php" class="logo">MegaCritic</a>
                 <p class="titre">Inscription</p>
                 <hr>
                 <div class="form-group mt-2">
@@ -81,13 +121,13 @@ require '../controllers/controller-user.php';
                 <div class="form-group w-100 mt-2">
                     <input type="password" name="confirmPassword" class="form-control text-center" id="confirm" placeholder="Confirmer Password">
                 </div>
-                
+
 
                 <p class="text-danger mt-3"><?= $errors['hello'] ?? '' ?></p>
 
                 <button name="AddUser" type="submit" class="btn btn-secondary mt-3">Inscription</button>
                 <p class="mt-2">
-                    <b>Déjà un compte?</b><a href="connect.php"> Connectez-vous</a>
+                    <span>Déjà un compte?</span><a href="connect.php"> Connectez-vous</a>
                 </p>
             </div>
         </form>
