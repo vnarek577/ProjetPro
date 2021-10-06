@@ -162,7 +162,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <span class="navbar-brand">Admin</span>
+      <a class="navbar-brand" href="../index.php">Admin</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -170,7 +170,7 @@
         <form class="d-flex">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link me-5" aria-current="page" href="../index.php">Accueil</a>
+              <a class="nav-link me-5" aria-current="page" href="allmycritics.php">Liste de films</a>
             </li>
             <li class="nav-item">
               <a class="nav-link me-5" aria-current="page" href="user.php">Profile</a>
@@ -179,7 +179,7 @@
               <a class="nav-link me-5" aria-current="page" href="write.php">Aperçu</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link me-5" aria-current="page" href="#">Ajouter</a>
+              <a class="nav-link me-5" aria-current="page" href="critics.php">Ajouter</a>
             </li>
           </ul>
         </form>

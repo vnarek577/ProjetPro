@@ -529,35 +529,29 @@ if (isset($_SESSION['user_pseudo'])) {
             </div>
         </nav>
     <?php } else { ?>
+        <nav class="navbar navbar-expand-lg navbar navbar-dark fixed-top" id="personalColor">
 
-        <!-- <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="index.php">logo</a>
+            <div class="container-fluid container">
+                <a class="navbar-brand" href="../index.php"><span class="mega">MegaCritic</span></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="allmycritics.php">List de films</a>
+                            <a href="allmycritics.php" class="nav-link cool-link" aria-current="page">Liste de films</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="user.php">Mon compte</a>
-                        </li>
+
                     </ul>
-                    <div class="dropdown" style="float:right;">
-                        <button class="dropbtn bg-dark" disabled>Connexion</button>
-                        <div class="dropdown-content color">
-                            <a href="connect.php">Connexion</a>
-                            <a href="form.php">Inscription</button></a>
-                        </div>
-                    </div>
+                            <li>
+                                <a href="connect.php"><button class="btn btn-sm btn-secondary">Connexion</button></a>
+                            </li>
+                            <li>
+                                <a href="form.php"><button class="btn btn-sm btn-secondary">Rejoignez-Nous</button></a>
+                            </li>
                 </div>
             </div>
-        </nav> -->
+        </nav>
 
     <?php } ?>
 

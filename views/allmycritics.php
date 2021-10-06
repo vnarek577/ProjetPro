@@ -2,6 +2,8 @@
 
 require '../controllers/controller-user.php';
 
+
+
 ?>
 
 
@@ -326,6 +328,14 @@ require '../controllers/controller-user.php';
         height: 70px;
     }
 
+    .card-bodyDelete{
+
+        align-items: center;
+        text-align: center;
+        height: 100px;
+    }
+
+
 
     .card a img {
         opacity: 1;
@@ -445,15 +455,56 @@ require '../controllers/controller-user.php';
         <div class="row">
             <?php foreach ($criticsAllArray as $allfilms) { ?>
 
-                <div class="col-sm-4 d-flex justify-content-around mt-4">
-                    <div class="card" style="width: 16rem;">
-                        <a href="indi.php?id=<?= $allfilms['critics_id']  ?>"><img class="card-img-top" width="200px" height="300px" src="<?= $allfilms['critics_poster']  ?>" alt="Card image cap"></a>
-                        <div class="card-body">
-                            <p class="card-text"><?= $allfilms['critics_film_title']  ?></p>
+
+
+
+                <?php if (isset($_SESSION['user_admin']) && $_SESSION['user_admin'] == 1) {  ?>
+
+
+                    <div class="col-sm-4 d-flex justify-content-around mt-4">
+                        <div class="card" style="width: 16rem;">
+                            <a href="indi.php?id=<?= $allfilms['critics_id']  ?>"><img class="card-img-top" width="200px" height="300px" src="<?= $allfilms['critics_poster']  ?>" alt="Card image cap"></a>
+                            <div class="card-bodyDelete">
+                                <p class="card-text"><?= $allfilms['critics_film_title']  ?></p>
+                                <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#lox<?= $allfilms['critics_id']  ?>">Supprimer</button>
+
+                                <div class="modal fade" id="lox<?= $allfilms['critics_id']  ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="staticBackdropLabel">Changement du commentaire</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body modalInput">
+                                                <form method="POST">
+                                                    <p> Vous voulez supprimer, <b><?= $allfilms['critics_film_title']  ?>?</b></p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Non</button>
+                                                <button type="submit" value="<?= $allfilms['critics_id']  ?>" name="deleteMovie" class="btn btn-success">Supprimer</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
-                </div>
 
+
+                <?php } else { ?>
+
+                    <div class="col-sm-4 d-flex justify-content-around mt-4">
+                        <div class="card" style="width: 16rem;">
+                            <a href="indi.php?id=<?= $allfilms['critics_id']  ?>"><img class="card-img-top" width="200px" height="300px" src="<?= $allfilms['critics_poster']  ?>" alt="Card image cap"></a>
+                            <div class="card-body">
+                                <p class="card-text"><?= $allfilms['critics_film_title']  ?></p>
+                            </div>
+                        </div>
+                    </div>
+
+                <?php } ?>
 
             <?php } ?>
         </div>

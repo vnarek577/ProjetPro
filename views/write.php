@@ -265,7 +265,7 @@ if (isset($_GET['idMovie'])) {
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Admin</a>
+        <a class="navbar-brand" href="../index.php">Admin</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -273,7 +273,7 @@ if (isset($_GET['idMovie'])) {
             <form class="d-flex">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 hui">
                     <li class="nav-item">
-                        <a class="nav-link me-5" aria-current="page" href="../index.php">Accueil</a>
+                        <a class="nav-link me-5" aria-current="page" href="allmycritics.php">Liste de films</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link me-5" aria-current="page" href="user.php">Profile</a>
@@ -286,13 +286,6 @@ if (isset($_GET['idMovie'])) {
                     </li>
                 </ul>
             </form>
-            <!-- <form class="d-flex justify-content-end">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link me-5" aria-current="page" href="#">Quitter</a>
-                    </li>
-                </ul>
-            </form> -->
         </div>
     </div>
 </nav>

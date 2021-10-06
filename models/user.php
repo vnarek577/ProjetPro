@@ -411,4 +411,15 @@ class User extends Database
     }
 
 
+    public function deleteMovie($id)
+    {
+
+        $database = $this->connectDatabase();
+        $myQuery = 'DELETE FROM `mila_critics` WHERE critics_id =:id';
+        $queryClient = $database->prepare($myQuery);
+        $queryClient->bindValue(':id', $id, PDO::PARAM_INT);
+        $queryClient->execute();
+    }
+
+
 }

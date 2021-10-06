@@ -531,11 +531,15 @@ if (isset($_POST['deleteUserView'])) {
 }
 
 
-// if (isset($_POST['showMyComment'])) {
+if (isset($_POST['deleteMovie'])) {
+
+    $id = $_POST['deleteMovie'];
+
+    header("refresh: 0");
 
 
-//     $userId = $_POST['showMyComment'];
+    $deleteMovieArray = $userObj->deleteMovie($id);
+
+}
 
 
-//     $viewArrayUser = $userObj->afficheMilaComment($userId);
-// }
