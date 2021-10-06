@@ -107,7 +107,7 @@ if (isset($_POST['connectToUser'])) {
 
     if (isset($_SESSION['user_admin']) && $_SESSION['user_admin'] == 1) {
 
-        header("Location: adminPage.php");
+        header("Location: write.php");
     }
 }
 

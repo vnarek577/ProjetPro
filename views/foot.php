@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
-    <link rel="stylesheet" href="../assets/style/footer.css">
+    <!-- <link rel="stylesheet" href="../assets/style/footer.css"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100&display=swap" rel="stylesheet">
@@ -16,6 +16,189 @@
     <title>footer</title>
 </head>
 
+<style>
+    .footer {
+
+        background-color: black;
+        height: 250px;
+        margin-top: 10%;
+
+    }
+
+
+    .footer .footer-main-content h3 {
+
+        color: white;
+
+    }
+
+    .footer-main-content {
+
+        display: flex;
+        justify-content: space-evenly;
+
+    }
+
+    .footer .footer-main-content .footer-main-brand .loxt {
+        height: 3px;
+        border-radius: 30px;
+        background-color: #e91e63;
+
+    }
+
+    .footer .footer-main-content .cnt .loxt {
+        height: 3px;
+        border-radius: 30px;
+        background-color: #e91e63;
+
+    }
+
+    .footer .footer-main-content .footer-menu .loxt {
+        height: 3px;
+        border-radius: 30px;
+        background-color: #e91e63;
+
+    }
+
+    /* .footer .footer-main-content .footer-menu {
+
+        text-align: center;
+    } */
+
+
+    .footer .footer-main-content .footer-main-brand .clean {
+
+        color: #bbbbbb;
+    }
+
+    .footer .footer-main-content .footer-menu a {
+
+        display: block;
+        text-decoration: none;
+        color: #bbbbbb;
+    }
+
+    .footer .footer-main-content .footer-menu ul {
+
+        list-style-type: none;
+        align-items: start;
+        padding: 12px;
+    }
+
+    .footer .footer-main-content .footer-menu i {
+
+        margin: 4px;
+    }
+
+    .footer .footer-main-content .cnt ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+    }
+
+    .footer .footer-main-content .cnt {
+
+        text-align: center;
+    }
+
+    .footer .footer-main-content .cnt a i {
+
+        background-color: grey;
+        margin: 0 10px 10px 0;
+        height: 30px;
+        width: 30px;
+        line-height: 30px;
+        border-radius: 100px;
+
+    }
+
+    .footer .footer-main-content .cnt a {
+        color: white;
+    }
+
+    .footer .footer-main-content .cnt a i:hover {
+
+        color: black;
+        background-color: white;
+    }
+
+    .footer-menu li a {
+
+        color: #bbbbbb;
+        text-decoration: none;
+
+    }
+
+    .footer .footer-me {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        color: #bbbbbb;
+    }
+
+    /* .footer-main-brand {
+
+        text-align: center;
+    } */
+
+
+  
+    .footer .footer-main-content .footer-main-brand {
+
+        margin-top: 2%;
+
+    }
+
+    .footer .footer-main-content .cnt {
+
+        margin-top: 2%;
+
+    }
+
+    .footer .footer-main-content .footer-menu {
+
+        margin-top: 2%;
+
+    }
+
+
+    @media(max-width: 500px) {
+        .footer-main-content {
+            display: block;
+        }
+
+        .footer-main-brand {
+            text-align: center;
+            margin-bottom: 10%;
+        }
+
+        .loxt{
+            margin: 0 auto;
+            width: 20%;
+        }
+
+        .footer {
+            height: 500px;
+        }
+
+        .footer-menu {
+
+            margin-bottom: 10%;
+        }
+
+        .cnt .loxt {
+            margin-bottom: 3%;
+        }
+
+        .footer-menu {
+
+            text-align: center;
+        }
+
+    }
+</style>
+
 <body>
 
 
@@ -23,35 +206,43 @@
     <div class="footer">
         <div class="footer-main-content">
             <div class="footer-main-brand">
-                <p>MegaCritic</p>
-            </div>
-            <div class="footer-text">
-                Un site destiné à partager mes avis sur les films les plus connus
-            </div>
-            <div class="contact mt-2">
 
-                <hr class="left"><span>REJOIGNEZ-NOUS</span>
-                <hr class="right">
+                <h3>Nous</h3>
+                <hr class="loxt">
 
+                <span class="clean">MegaCritic</span>
+                <p class="clean">Un site destiné à partager mes avis<br> sur les films les plus connus</p>
             </div>
-            <div class="footer-icons">
-                <ul>
-                    <li><a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a></li>
-                    <li><a href="#" class="youtube"><i class="fab fa-youtube"></i></a></li>
-                    <li><a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a></li>
-                    <li><a href="#" class="instagram"><i class="fab fa-twitter"></i></a></li>
-                </ul>
-            </div>
+
+
+
             <div class="footer-menu">
-                <ul>
-                    <li><a href="../index.php" class=""><i class="fas fa-home"></i>Accueil</a></li>
-                    <li><a href="allmycritics.php" class=""><i class="fas fa-list"></i>List de films</a></li>
-                    <li><a href="#" class="" data-bs-toggle="modal" data-bs-target="#mentionModal"><i class="fas fa-balance-scale"></i>Mentions légales</a></li>
-                </ul>
+                <h3>Navigation</h3>
+                <hr class="loxt">
+
+                <a href="../index.php" class=""><i class="fas fa-home"></i>Accueil</a>
+                <a href="allmycritics.php" class=""><i class="fas fa-list"></i>List de films</a>
+                <a href="#" class="" data-bs-toggle="modal" data-bs-target="#mentionModal"><i class="fas fa-balance-scale"></i>Mentions légales</a>
+
             </div>
-            <div class="footer-me">
-                <p>© MegaCritic - Tous droits réservés.</p>
+
+            <div class="cnt">
+
+                <h3>Rejoignez-nous</h3>
+                <hr class="loxt">
+
+
+                <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="youtube"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="instagram"><i class="fab fa-twitter"></i></a>
+
+
             </div>
+
+        </div>
+        <div class="footer-me">
+            <p>© MegaCritic - Tous droits réservés.</p>
         </div>
     </div>
 

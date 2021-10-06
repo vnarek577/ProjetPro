@@ -17,7 +17,7 @@
 <style>
     textarea {
 
-        width: 30%;
+        width: 40%;
         border-radius: 8px;
         margin-left: auto;
         margin-right: auto;
@@ -28,48 +28,53 @@
 
     .control {
         text-align: center;
+        margin-top: 10%;
+    }
+
+    @media screen and (max-width: 576px) {
+
+        textarea {
+
+            width: 80%;
+
+        }
     }
 </style>
 
 <body>
 
-<?php if(isset($_SESSION['user_pseudo'])) { ?>
+    <?php if (isset($_SESSION['user_pseudo'])) { ?>
 
-    <form action="" method="POST">
-        <div class="control">
-            <div class="center mt-5">
-                <a href="user.php">
-                    <p class=""><?= $_SESSION['user_pseudo'] ?></p>
-                </a>
+        <form action="" method="POST">
+            <div class="control">
+                <div class="input-group">
+                    <textarea class="textarea is-success" id="story" name="story" rows="5" cols="33"></textarea>
+                </div>
+                <div class="mt-2 pb-5">
+                    <button class="btn btn-sm btn-secondary" name="commentButton" type="submit">Envoyer un nouveau commentaire</button>
+                </div>
             </div>
-            <div class="input-group">
-                <textarea class="textarea is-success" id="story" name="story" rows="5" cols="33"></textarea>
-            </div>
-            <div class="mt-2 pb-5">
-                <button class="btn btn-sm btn-secondary" name="commentButton" type="submit">Envoyer un nouveau commentaire</button>
-            </div>
-        </div>
-    </form>
-<?php }else { ?>
+        </form>
+    <?php } else { ?>
 
 
 
-<form action="" method="POST">
-        <div class="control">
-            <div class="center mt-5">
-            <p class="text-danger"><?= isset($errors['registration']) ? $errors['registration'] : '' ?> </p> 
+        <form action="" method="POST">
+            <div class="control">
+                <div class="center mt-5">
+                    <p class="text-danger"><?= isset($errors['registration']) ? $errors['registration'] : '' ?> </p>
 
+                </div>
+                <div class="input-group">
+                    <textarea class="textarea is-success" id="story" name="story" rows="5" cols="33"></textarea>
+                </div>
+                <div class="mt-2 pb-5">
+                    <button class="btn btn-sm btn-secondary" name="novalide" type="submit">Envoyer un nouveau commentaire</button>
+                </div>
             </div>
-            <div class="input-group">
-                <textarea class="textarea is-success" id="story" name="story" rows="5" cols="33"></textarea>
-            </div>
-            <div class="mt-2 pb-5">
-                <button class="btn btn-sm btn-secondary" name="novalide" type="submit">Envoyer un nouveau commentaire</button>
-            </div>
-        </div>
-    </form>
+        </form>
 
-<?php } ?>
+    <?php } ?>
 
 </body>
 

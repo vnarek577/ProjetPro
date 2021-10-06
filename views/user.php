@@ -43,7 +43,6 @@ $viewArrayUser = $userObj->afficheMilaComment($userId);
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kaisei+Tokumin&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/style/footer.css">
     <title>Document</title>
 </head>
 
@@ -368,7 +367,7 @@ $viewArrayUser = $userObj->afficheMilaComment($userId);
                         <a href="../index.php" class="nav-link cool-link" aria-current="page">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link cool-link" href="allmycritics.php">List des films</a>
+                        <a class="nav-link cool-link" href="allmycritics.php">Liste de films</a>
                     </li>
                 </ul>
                 <div class="dropdown">
@@ -383,6 +382,7 @@ $viewArrayUser = $userObj->afficheMilaComment($userId);
             </div>
         </div>
     </nav>
+
     <div class="content">
         <div class="content-top">
             <h3>Compte</h3>
@@ -490,7 +490,7 @@ $viewArrayUser = $userObj->afficheMilaComment($userId);
 
     <?php
 
-    include 'footer.php';
+    include 'foot.php';
 
     ?>
 

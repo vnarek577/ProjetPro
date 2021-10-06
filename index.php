@@ -231,10 +231,163 @@ require 'controllers/controller-index.php';
         opacity: 0.3;
     }
 
-    .card .middle {}
-
     .card:hover .middle {
         opacity: 1;
+    }
+
+
+    .dropbtn {
+        background-color: #6c757d;
+        color: white;
+        padding: 16px;
+        font-size: 15px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: #383838;
+        min-width: 10px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        margin-left: 10%;
+    }
+
+    .dropdown-content a {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #383838;
+        text-decoration: underline;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: #6c757d;
+    }
+
+    .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0.8;
+    }
+
+
+    .box:hover {
+        transition: all 1s ease-out;
+    }
+
+
+
+    .validation {
+        display: flex;
+        background-color: green;
+        color: white;
+        align-items: center;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        height: 30px;
+        padding-right: 10px;
+
+    }
+
+    .box1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: green;
+        height: 30px;
+        width: 40px;
+        text-align: center;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+    }
+
+    .decconect {
+        border: none;
+        padding: 0;
+        margin: 0;
+        font-size: 15px;
+        color: white;
+        background-color: transparent;
+    }
+
+    a:hover button {
+        text-decoration: underline;
+        transition: 0.3s;
+        color: white;
+    }
+
+    .color a:hover {
+        color: white;
+    }
+
+    .color a {
+
+        color: #cccccc;
+    }
+
+    .color button {
+
+        color: #cccccc;
+    }
+
+
+  
+
+    li a {
+        text-decoration: none;
+        color: #f2f2f2;
+        font-family: 'Kaisei Tokumin', serif;
+        font-weight: lighter;
+        font-size: 17px;
+        padding: 0 10px;
+        display: inline-block;
+    }
+
+    .cool-link::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: white;
+        transition: width .3s;
+        background-color: white;
+
+
+    }
+
+    .cool-link:hover::after {
+        width: 100%;
+        transition: width .3s;
+
+
+    }
+
+    .cool-link:hover {
+        color: white;
+    }
+
+    .compte {
+        width: 30%;
+        background-color: #C8C8C8;
     }
 </style>
 
@@ -243,21 +396,70 @@ require 'controllers/controller-index.php';
 
     <?php if (isset($_SESSION['user_pseudo'])) {  ?>
 
-        <nav class="navbar navbar-light bg-primary">
-            <div class="container-fluid">
-                <a href="index.php" class="navbar-brand"><img width="50px" src="dsq.png"></a>
-                <div class="dropdown" style="float:right;">
-                    <button class="dropbtn"><?= $_SESSION['user_pseudo'] ?> <img width="50px" src=""></button>
-                    <div class="dropdown-content">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-dark" id="personalColor">
+        <div class="container-fluid container">
+            <a class="navbar-brand" href="index.php">MegaCritic</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link cool-link" href="./views/allmycritics.php">Liste de films</a>
+                    </li>
+                </ul>
+                <div class="dropdown">
+                    <button class="dropbtn bg-dark decconect"><?= $_SESSION['user_pseudo'] ?> <img width="50px" src=""></button>
+                    <div class="dropdown-content color">
                         <a href="./views/user.php">Compte</a>
-
                         <form action="" method="POST" novalidate>
-                            <a><button name="deconectButton" type="submit" class="hd">Déconnexion</button></a>
+                            <a><button name="deconectButton" type="submit" class="decconect">Déconnexion</button></a>
                         </form>
                     </div>
                 </div>
             </div>
-        </nav>
+        </div>
+    </nav>
+
+
+        <div id="carouselExampleIndicators" class="w-100 vh-50 carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="assets/img/frogSmall.jpg" class="d-block w-100 " alt="...">
+                    <div class="carousel-caption d-none d-md-block welcome">
+                        <p>Mega critic</p>
+                        <h1>Un site destiné à partager mes avis sur les films les plus connus</h1>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/leonSmall.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block welcome">
+                        <p>Mega critic</p>
+                        <h1>Un site destiné à partager mes avis sur les films les plus connus</h1>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/spiderSmall.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block welcome">
+                        <p>Mega critic</p>
+                        <h1>Un site destiné à partager mes avis sur les films les plus connus</h1>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
 
     <?php  } else { ?>
 
@@ -402,7 +604,7 @@ require 'controllers/controller-index.php';
 
     <?php
 
-    include './views/footer.php';
+    include './views/foot.php';
 
     ?>
 

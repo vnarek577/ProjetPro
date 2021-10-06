@@ -65,7 +65,7 @@ if (isset($_GET['idMovie'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <title>Document</title>
 </head>
 
@@ -80,184 +80,282 @@ if (isset($_GET['idMovie'])) {
         text-align: left;
     } */
 
-    * {
+    /* * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
         font-family: 'Poppins', sans-serif;
-    }
+    } */
+
+
 
     body {
-        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+
     }
 
-    a {
+    .main-content {
+        width: 15%;
+        background-color: #1a1d29;
+        height: 100vh;
+    }
+
+    .log-out {
+        position: absolute;
+        bottom: 0;
+    }
+
+    .main-content .main-content-content {
+        padding: 10px;
+    }
+
+    .main-content-content .main ul,
+    li,
+    i {
+
         text-decoration: none;
-    }
-
-    li {
         list-style: none;
-    }
-
-    h1,
-    h2 {
-
-        color: #444;
-    }
-
-    .side-menu {
-        position: fixed;
-        background: #f05462;
-        width: 20vw;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .side-menu .brand-name {
-
-        height: 10vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .side-menu li {
-
-        font-size: 24px;
-        padding: 10px 40px;
         color: white;
-        display: flex;
-        align-items: center;
+
     }
 
-    .side-menu li:hover {
+    .main-content-content .main ul a {
 
-        background: white;
-        color: #f05462;
+        text-decoration: none;
+
+    }
+
+    .main-content-content .logo p {
+        padding: 40px;
+        margin-left: 5%;
+        font-size: xx-large;
+        color: white;
+    }
+
+    .main-content-content .log-out,
+    ul,
+    li,
+    i {
+        text-decoration: none;
+        padding: 10px;
+        list-style: none;
+        color: white;
+    }
+
+
+    .main-all {
+
+        margin: 0 auto;
+        width: 80%;
+        margin-top: 6%;
+
+    }
+
+    .main-all .head {
+
+        height: 100px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: xx-large;
+        border-bottom: 1rem solid grey;
+        background: #1a1d29;
+        color: white;
+    }
+
+    .main {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .monster-content {
+
+        margin: 0 auto;
+        width: 80%;
+        height: 62%;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        margin-bottom: 5%;
+
+    }
+
+    .monster-content:hover {
+
+
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+
+    }
+
+    .monster {
+        height: 86vh;
+
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .monster-main {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .monster-main-content {
+
+        text-align: center;
+
+    }
+
+    .monster .monavis {
+
+        margin: 0 auto;
+        width: 40%;
+        justify-content: center;
+        height: 38%;
+        text-align: center;
+    
+    }
+
+    .monster .monavis textarea {
+
+        height: 150px;
+        width: 100%;
+        border-radius: 30px;
+    }
+
+    .selection {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+
+    }
+
+    .her {
+
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     }
 
     .container {
-        position: absolute;
-        right: 0;
-        width: 80vw;
-        height: 100vh;
-        background: #f1f1f1;
+        padding: 2px 16px;
     }
 
-    .container .header {
 
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 80vw;
-        height: 10vh;
-        background: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-
-    }
-
-    .container .header .nav {
-
-        width: 90%;
-        display: flex;
-        align-items: center;
-    }
-
-    .container .header .nav .search {
-
-        flex: 3;
-        display: flex;
-        justify-content: center;
-    }
-
-    .container .header .nav .search input[type=text] {
-
-        border: none;
-        background: #f1f1f1;
-        padding: 10px;
-        width: 50%;
-    }
-
-    .container .header .nav .search button {
-        width: 40px;
-        height: 40px;
-        border: none;
-
-    }
-
-    .container .header .nav .user {
-
-        flex: 1;
-        background: hotpink;
-
-    }
-
-    .container .content {
-
-        min-height: 60vh;
-        display: flex;
-        justify-content: space-around;
-        align-items: flex-start;
-        flex-wrap: wrap;
-
-    }
-
-    .container .content .recent-payments {
-
-        min-height: 80vh;
-        flex: 5;
-        background: white;
-        margin: 0 25px 25px 25px;
-        display: flex;
-        align-items: center;
-        margin-top: 10%;
-    }
 </style>
 </body>
 
 
-<div class="side-menu">
-    <div class="brand-name">
-        <h1>Admin</h1>
-    </div>
-    <ul>
-        <li>Profile</li>
-        <li>Aperçu</li>
-        <li><a href="adminPage.php">Ajouter un film</a></li>
-    </ul>
-</div>
-
-<div class="container">
-    <div class="header">
-        <div class="nav">
-            <div class="search">
-                <input id="movieSearch" type="text" placeholder="Search..">
-                <button id="buttonSearch" type="button">Search</button>
-            </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Admin</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-evenly" id="navbarSupportedContent">
+            <form class="d-flex">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 hui">
+                    <li class="nav-item">
+                        <a class="nav-link me-5" aria-current="page" href="../index.php">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link me-5" aria-current="page" href="user.php">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link me-5" aria-current="page" href="write.php">Aperçu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link me-5" aria-current="page" href="critics.php">Ajouter</a>
+                    </li>
+                </ul>
+            </form>
+            <!-- <form class="d-flex justify-content-end">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link me-5" aria-current="page" href="#">Quitter</a>
+                    </li>
+                </ul>
+            </form> -->
         </div>
     </div>
-</div>
+</nav>
 
 
 
 
-<div class="container">
-    <div class="header">
-        <div class="nav">
-            <div class="search">
-                <h1>Aperçu</h1>
+
+<?php if (isset($_GET['idMovie'])) { ?>
+
+    <div class="main-all">
+        <div class="head">
+            <p>Aperçu</p>
+        </div>
+
+    </div>
+
+
+    <form action="" method="POST">
+        <div class="monster">
+            <div class="monster-content">
+                <div class="monster-poster">
+                    <input type="hidden" name="poster" value="<?= $data['Poster'] ?>">
+                    <img width="240px" src="<?= $data['Poster'] ?>">
+                </div>
+
+                <div class="monster-main">
+                    <div class="monster-main-content">
+                        <input name="title" type="hidden" value="<?= $data['Title'] ?>">
+                        <h4><?= $data['Title'] ?></h4>
+                        <input style="" type="hidden" name="plot" value="<?= $data['Plot'] ?>">
+                        <p><?php echo $data['Plot'] ?></p>
+                        <input name="release" type="hidden" value="<?= $data['Year'] ?>">
+                        <p>Année : <?= $data['Year'] ?></p>
+                        <input name="genre" type="hidden" value="<?= $data['Genre'] ?>">
+                        <p>Genres: <?= $data['Genre']  ?></p>
+                        <input name="imdbRating" type="hidden" value="<?= $data['imdbRating'] ?>">
+                        <p>imDb rating: <?= $data['imdbRating']  ?></p>
+                        <input name="Runtime" type="hidden" value="<?= $data['Runtime'] ?>">
+                        <p>Durée: <?= $data['Runtime'] ?></p>
+                        <input name="Director" type="hidden" value="<?= $data['Director'] ?>">
+                        <p>Realisateur: <?= $data['Director'] ?></p>
+                        <input style="" type="hidden" name="cast" value="<?= $data['Actors'] ?>">
+                        <p>Rôles principaux: <?= $data['Actors'] ?></p>
+                    </div>
+                </div>
+            </div>
+            <?php if (isset($errors['film'])) { ?>
+                <span class="p-2 bd-highlight text-danger"><?= $errors['film']  ?></span>
+            <?php } ?>
+            <div class="monavis">
+                <textarea name="critic"></textarea><br>
+                <input name="imdbId" type="hidden" value="<?= $data['imdbID'] ?>">
+                <button type="submit" name="btn-upload" class="btn btn-sm btn-secondary">Upload</button>
+
             </div>
         </div>
-    </div>
-    <div class="content">
-        <div class="recent-payments">
+    </form>
 
-            <?php if (isset($_GET['idMovie'])) { ?>
-                <form action="" method="POST">
+
+
+
+    <!-- <form action="" method="POST">
                     <div id="affiche" class="d-flex gap-2 col-6 mx-auto">
 
                         <div class="box">
@@ -305,19 +403,24 @@ if (isset($_GET['idMovie'])) {
                     <button type="submit" name="btn-upload">Upload</button>
 
 
-                </form>
+                </form>  -->
 
-            <?php } else { ?>
 
-                <div class="d-grid gap-2 col-6 mx-auto">
 
-                    <h1>Veuillez selectionner un film</h1>
 
-                </div>
 
-            <?php } ?>
 
-            <!-- <div class="card d-grid gap-2 col-6 mx-auto" style="width: 18rem;">
+<?php } else { ?>
+
+    <div class="selection">
+
+        <h1>Veuillez selectionner un film</h1>
+
+    </div>
+
+<?php } ?>
+
+<!-- <div class="card d-grid gap-2 col-6 mx-auto" style="width: 18rem;">
                 <input type="hidden" name="poster" value="<?= $data['Poster'] ?>">
                 <img src="<?= $data['Poster'] ?>" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -331,25 +434,17 @@ if (isset($_GET['idMovie'])) {
             </div> -->
 
 
-        </div>
-    </div>
-</div>
-
-<a href="critics.php"><button>Retour Search</button></a>
 
 
 
 
 
 
-<div class="d-flex align-items-center flex-column bd-highlight mb-3" style="height: 200px;">
-
-    <?php if (isset($errors['film'])) { ?>
-        <div class="p-2 bd-highlight text-danger"><?= $errors['film']  ?></div>
-    <?php } ?>
-</div>
 
 
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 
 </body>
